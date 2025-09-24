@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Women's Wear Collection</title>
+  <style>
+    form { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+    input, textarea { display: block; margin: 10px 0; width: 300px; }
+    .item { border: 1px solid #ddd; margin: 10px; padding: 10px; }
+    .item img { max-width: 150px; display: block; margin-bottom: 5px; }
+  </style>
+</head>
+
+<body>
+  <h1>Women’s Wear – Add a New Item</h1>
+  <form action="/womenswear" method="post" enctype="multipart/form-data">
+    <label>Cloth Name: </label>
+    <input type="text" name="name" required>
+    <br>
+
+    <label>Price ($):  </label>
+    <input type="number" name="price" step="0.01" required>
+    <br>
+
+    <label>Description: </label>
+    <textarea name="description"></textarea>
+    <br>
+
+    <label>Image: </label>
+    <input type="file" name="image" accept="image/*" required>
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+  
+  <h2>Available Items</h2>
+  {% for item in items %}
+  <div class="item">
+    <img src="data:image/jpeg;base64,{{ item.image_data }}" alt="Cloth Image">
+    <strong>{{ item.name }}</strong><br>
+    ${{ item.price }}<br>
+    {{ item.description }}
+    
+  <form action="/checkout" method="get">
+    <input type="hidden" name="category" value="womens">
+    <input type="hidden" name="id" value="{{ item.id }}">
+    <button type="submit">Buy Now</button>
+  </form>
+
+
+
+  </div>
+  {% endfor %}
+</body>
+</html>

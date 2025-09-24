@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LANDING PAGE</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .site-title {
+      font-size: 32px;
+      margin-right: 30px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: left;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    nav > ul > li {
+      display: inline-block;
+      position: relative;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    /* Dropdown styles */
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    nav ul ul li {
+      display: block;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul a {
+      padding: 10px;
+      color: white;
+    }
+
+    nav ul ul a:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      header, nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .site-title, .search-bar {
+        margin-top: 10px;
+      }
+
+      nav ul > li {
+        display: block;
+        margin: 5px 0;
+      }
+
+      nav ul ul {
+        position: static;
+      }
+
+    .sidebar {
+      width: 220px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px;
+      float: left;
+      font-size: 16px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin-right: 30px;
+    }
+  
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      color: #333;
+    }
+
+    .sidebar ul li span {
+      color: gray; 
+    }
+  }
+  .product-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 900px;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.product-image img {
+  width: 300px;
+  height: 300px;
+}
+
+.product-details {
+  max-width: 400px;
+}
+
+.product-details h2 {
+  font-size: 32px;
+  margin: 0;
+  color: #333;
+}
+
+.product-details .price {
+  font-size: 20px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.product-details .description {
+  margin: 15px 0;
+  color: #666;
+  font-size: 15px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="/pngtree-e-letter-logo-ecommerce-shop-store-design-png-image_4381099.png" alt="Logo" class="logo">
+    <h1 class="site-title">E-SHOP</h1>
+    <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    </div>
+
+    <div style="margin-left: 100px; color: #333; font-size: 16px;">
+        Contact me - 6354599274
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">REVIEWS</a>
+        <ul>
+          <li><a href="http://127.0.0.1:5000/reviewform">SUBMIT YOUR REVIEWS </a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">COLLECTIONS</a>
+        <ul>
+        <li><a href="http://127.0.0.1:5000/menswear">MEN'S WEAR</a></li>
+        <li><a href="http://127.0.0.1:5000/womenswear">WOMEN'S WEAR</a></li>
+        </ul>
+      </li>
+      
+      <li><a href="SHOPDETAILS.html">SHOP & CONTACT DETAILS</a>
+      </li>
+
+      <li><a href="#">BLOG</a>
+        <ul>
+        <li><a href="EXAMPLE 1.HTML">MY BLOG</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">PAGES</a>
+        <ul>
+        <li><a href="EXAMPLE 1.HTML">PAGE 1</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+<div style="display: flex; align-items: flex-start; margin: 20px;">
+  <div class="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li><a href="EXAMPLE 1.HTML">Products</a></li>
+      <li><a href="EXAMPLE 1.HTML">Gift</a></li>
+      <li><a href="EXAMPLE 1.HTML">Accessories</a></li>
+      <li><a href="EXAMPLE 1.HTML">Pet</a></li>
+      <li><a href="EXAMPLE 1.HTML">Tool</a></li>
+      <li><a href="EXAMPLE 1.HTML">Cosmetics</a></li>
+      <li><a href="EXAMPLE 1.HTML">Skin Care</a></li>
+      <li><a href="EXAMPLE 1.HTML">Decoration</a></li>
+      <li><a href="EXAMPLE 1.HTML">Clothing</a></li>
+      <li><a href="EXAMPLE 1.HTML">Bath</a></li>
+      <li><a href="EXAMPLE 1.HTML">Shoes</a></li>
+      <li><a href="EXAMPLE 1.HTML">Oral Care</a></li>
+    </ul>
+  </div>
+
+  <div class="product-highlight">
+    <div class="product-image">
+      <img src="white-mugs-on-yellow-background-for-your-designs-mockup-ai-generated-photo.jpg" alt="Lovely Bright Product" />
+    </div>
+
+    <div class="product-details">
+      <h2>Lovely Bright Mugs</h2>
+      <hr>
+      <p class="price">Price: Rs. 199</p>
+      <hr>
+      <p class="description">Make your kitchen more elegant.</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
