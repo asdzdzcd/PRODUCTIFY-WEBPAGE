@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    form { max-width: 400px; margin: auto; }
+    input { width: 100%; padding: 10px; margin: 8px 0; }
+    button { padding: 10px 20px; background: blue; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <h1>Enter Debit Card Details</h1>
+  <form action="/process_payment" method="post">
+    <input type="hidden" name="order_id" value="{{ order_id }}">
+
+    <label>Card Number:</label>
+    <input type="text" name="card_number" pattern="\d{12,20}" required>
+
+    <label>Expiry Month (1–12):</label>
+    <input type="number" name="expiry_month" min="1" max="12" required>
+
+    <label>Expiry Year (e.g. 2026):</label>
+    <input type="number" name="expiry_year" min="2023" required>
+
+    <label>CVV:</label>
+    <input type="password" name="cvv" pattern="\d{3,4}" required>
+
+    <button type="submit">Pay</button>
+  </form>
+</body>
+</html>

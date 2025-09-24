@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    .product { display: flex; gap: 20px; margin-bottom: 30px; }
+    .product img { width: 200px; border: 1px solid #ccc; }
+    .product-details { max-width: 400px; }
+    form { border-top: 1px solid #ddd; padding-top: 20px; }
+    input, textarea { width: 100%; padding: 8px; margin: 8px 0; }
+    button { padding: 10px 20px; background: black; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <h1>Checkout</h1>
+
+  <div class="product">
+    <img src="data:image/jpeg;base64,{{ image_data }}" alt="Product">
+    <div class="product-details">
+      <h2>{{ name }}</h2>
+      <p><strong>Price:</strong> ₹{{ price }}</p>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+
+  <form action="/checkout" method="post">
+    <!-- keep category/id so POST knows which product -->
+    <input type="hidden" name="category" value="{{ category }}">
+    <input type="hidden" name="id" value="{{ id }}">
+
+    <h3>Your Details</h3>
+    <label>Full Name:</label>
+    <input type="text" name="buyer_name" required>
+
+    <label>Mobile Number:</label>
+    <input type="tel" name="buyer_mobile" pattern="\d{10}" required>
+
+    <label>Address:</label>
+    <textarea name="buyer_address" rows="4" required></textarea>
+
+    <button type="submit">Confirm Order</button>
+  </form>
+</body>
+</html>
